@@ -80,11 +80,3 @@ class WordBoard():
                 print_string += "\t"
 
         return print_string
-
-test = SpymasterBoard()
-
-print(test)
-
-test = WordBoard()
-
-print(test)
