@@ -60,7 +60,6 @@ class WordBoard():
         The initializer of the codename word board which is the word tiles visable to everyone. 
         The board is a 5 by 5 board with 25 tiles.
         """
-        # self.tiles = []
 
         self.tiles = sample(words, 25)
 
