@@ -1,14 +1,18 @@
 from random import shuffle, sample
 import csv
 
-words = []
+WORDS = []
 
 word_file_name = "most-common-nouns-english.csv"
+
 
 with open(word_file_name, 'r') as word_file:
     word_file_reader = csv.reader(word_file)
     for line in word_file_reader:
-        words.append(line[0])
+        WORDS.append(line[0])
+
+
+MAX_WORD_LENGTH = max(list(map(len, WORDS)))
 
 class SpymasterBoard():
     """
@@ -48,7 +52,7 @@ class SpymasterBoard():
             elif index < 25 - 1:
                 print_string += "\t"
 
-        return print_string
+        return print_string.expandtabs(MAX_WORD_LENGTH+3)
 
 
 class WordBoard():
@@ -61,7 +65,7 @@ class WordBoard():
         The board is a 5 by 5 board with 25 tiles.
         """
 
-        self.tiles = sample(words, 25)
+        self.tiles = sample(WORDS, 25)
 
         shuffle(self.tiles)
 
@@ -79,4 +83,10 @@ class WordBoard():
             elif index < 25 - 1:
                 print_string += "\t"
 
-        return print_string
+        return print_string.expandtabs(MAX_WORD_LENGTH+3)
+
+# test = SpymasterBoard()
+
+# print(test)
+
+# print(MAX_WORD_LENGTH)
