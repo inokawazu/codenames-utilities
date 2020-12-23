@@ -1,4 +1,14 @@
-from random import shuffle
+from random import shuffle, sample
+import csv
+
+words = []
+
+word_file_name = "most-common-nouns-english.csv"
+
+with open(word_file_name, 'r') as word_file:
+    word_file_reader = csv.reader(word_file)
+    for line in word_file_reader:
+        words.append(line[0])
 
 class SpymasterBoard():
     """
@@ -50,10 +60,9 @@ class WordBoard():
         The initializer of the codename word board which is the word tiles visable to everyone. 
         The board is a 5 by 5 board with 25 tiles.
         """
-        self.tiles = []
+        # self.tiles = []
 
-        for _ in range(25):
-            self.tiles.append("word")
+        self.tiles = sample(words, 25)
 
         shuffle(self.tiles)
 
