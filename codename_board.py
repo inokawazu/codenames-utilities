@@ -84,9 +84,3 @@ class WordBoard():
                 print_string += "\t"
 
         return print_string.expandtabs(MAX_WORD_LENGTH+3)
-
-# test = SpymasterBoard()
-
-# print(test)
-
-# print(MAX_WORD_LENGTH)
