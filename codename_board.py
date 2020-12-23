@@ -28,12 +28,18 @@ class SpymasterBoard():
         """
         Returns the string form of the spymaster board.
         """
-        print_string = "["
+        print_string = ""
 
-        for tile in tiles:
-            print_string += tile + " "
+        for index, tile in enumerate(self.tiles):
+            print_string += tile
 
-        print_string += "]"
+            if (index + 1) % 5 == 0 and index > 0:
+                print_string += "\n"
+            elif index < 25 - 1:
+                print_string += "\t"
 
         return print_string
 
+test = SpymasterBoard()
+
+print(test)
