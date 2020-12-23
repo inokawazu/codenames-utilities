@@ -1,3 +1,5 @@
+from random import shuffle
+
 class Board():
     """
     This object represents the codename board.
@@ -20,3 +22,6 @@ class Board():
 
         for _ in range(black):
             self.spymaster_view.append("black")
+
+        shuffle(self.spymaster_view)
+
