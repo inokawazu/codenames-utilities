@@ -1,27 +1,39 @@
 from random import shuffle
 
-class Board():
+class SpymasterBoard():
     """
     This object represents the codename board.
     """
     def __init__(self, red = 9 , blue = 8, gray = 7 , black = 1 ):
         """
-        The initializer of the codename board. It constructs the word_view which 
-        is visible to all players and the spymaster_view. The board is a 5 by 5 board with 25 tiles.
+        The initializer of the codename spymaster board. The board is a 5 by 5 board with 25 tiles.
         """
-        self.spymaster_view = []
+        self.tiles = []
 
         for _ in range(red):
-            self.spymaster_view.append("red")
+            self.tiles.append("red")
 
         for _ in range(blue):
-            self.spymaster_view.append("blue")
+            self.tiles.append("blue")
 
         for _ in range(gray):
-            self.spymaster_view.append("gray")
+            self.tiles.append("gray")
 
         for _ in range(black):
-            self.spymaster_view.append("black")
+            self.tiles.append("black")
 
-        shuffle(self.spymaster_view)
+        shuffle(self.tiles)
+
+    def __str__(self):
+        """
+        Returns the string form of the spymaster board.
+        """
+        print_string = "["
+
+        for tile in tiles:
+            print_string += tile + " "
+
+        print_string += "]"
+
+        return print_string
 
