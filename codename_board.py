@@ -3,10 +3,10 @@ import csv
 
 WORDS = []
 
-word_file_name = "most-common-nouns-english.csv"
+WORD_FILE_NAME = "most-common-nouns-english.csv"
 
 
-with open(word_file_name, 'r') as word_file:
+with open(WORD_FILE_NAME, 'r') as word_file:
     word_file_reader = csv.reader(word_file)
     for line in word_file_reader:
         WORDS.append(line[0])
@@ -16,7 +16,7 @@ MAX_WORD_LENGTH = max(list(map(len, WORDS)))
 
 class SpymasterBoard():
     """
-    This object represents the codename board.
+    This object represents the codename spymasters' board.
     """
     def __init__(self, red = 9 , blue = 8, gray = 7 , black = 1 ):
         """
